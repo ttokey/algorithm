@@ -2,6 +2,8 @@
 
 ## infrearn
 
+### 섹션1. String (문자열)
+
 1. 문자 찾기 - FindChar
 2. 대소문자 변환 - TransChar
-
+3. 문장 속 단어(indexOf(), substring())

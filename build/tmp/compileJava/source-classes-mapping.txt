@@ -4,3 +4,5 @@ inflearn/string/TransChar.java
  inflearn.string.TransChar
 inflearn/string/FindWordInString.java
  inflearn.string.FindWordInString
+inflearn/string/ReverseWord.java
+ inflearn.string.ReverseWord

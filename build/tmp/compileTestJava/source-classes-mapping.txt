@@ -4,3 +4,5 @@ inflearn/string/TransCharTest.java
  inflearn.string.TransCharTest
 inflearn/string/FindWordInStringTest.java
  inflearn.string.FindWordInStringTest
+inflearn/string/ReverseWordTest.java
+ inflearn.string.ReverseWordTest
