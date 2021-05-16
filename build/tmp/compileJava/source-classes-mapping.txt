@@ -10,3 +10,5 @@ inflearn/string/TransAlphabet.java
  inflearn.string.TransAlphabet
 inflearn/string/RemoveDuplicate.java
  inflearn.string.RemoveDuplicate
+inflearn/string/PalindromeString.java
+ inflearn.string.PalindromeString
