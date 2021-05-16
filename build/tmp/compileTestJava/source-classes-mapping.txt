@@ -1,8 +1,10 @@
 inflearn/string/FindCharTest.java
  inflearn.string.FindCharTest
-inflearn/string/TransCharTest.java
- inflearn.string.TransCharTest
 inflearn/string/FindWordInStringTest.java
  inflearn.string.FindWordInStringTest
 inflearn/string/ReverseWordTest.java
  inflearn.string.ReverseWordTest
+inflearn/string/TransCharTest.java
+ inflearn.string.TransCharTest
+inflearn/string/TransAlphabetTest.java
+ inflearn.string.TransAlphabetTest
