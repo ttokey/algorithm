@@ -9,3 +9,5 @@
 3. 문장 속 단어(indexOf(), substring()) - FindWordInString
 4. 단어 뒤집기 - ReverseWord
 5. 특정 문자 뒤집기 - TransAlphabet
+6. 중복문자제거 - RemoveDuplicate
+

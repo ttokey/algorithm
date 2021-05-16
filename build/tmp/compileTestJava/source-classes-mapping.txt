@@ -6,5 +6,7 @@ inflearn/string/ReverseWordTest.java
  inflearn.string.ReverseWordTest
 inflearn/string/TransCharTest.java
  inflearn.string.TransCharTest
+inflearn/string/RemoveDuplicateTest.java
+ inflearn.string.RemoveDuplicateTest
 inflearn/string/TransAlphabetTest.java
  inflearn.string.TransAlphabetTest

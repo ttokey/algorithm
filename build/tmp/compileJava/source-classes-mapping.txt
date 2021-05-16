@@ -8,3 +8,5 @@ inflearn/string/FindWordInString.java
  inflearn.string.FindWordInString
 inflearn/string/TransAlphabet.java
  inflearn.string.TransAlphabet
+inflearn/string/RemoveDuplicate.java
+ inflearn.string.RemoveDuplicate
