@@ -11,5 +11,6 @@
 5. 특정 문자 뒤집기 - TransAlphabet
 6. 중복문자제거 - RemoveDuplicate
 7. 회문 문자열 - PalindromeString
+8. 유효한 팰린드롬 - ValidPalindrome
 
 
