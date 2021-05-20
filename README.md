@@ -17,3 +17,7 @@
 11. 문자열 압축 - StringPress
 12. 암호 - Password
 
+### 섹션2. Array (1, 2차원 배열)
+
+1. 큰 수 출력하기 - BigNumber
+2. 보이는 학생 - VisibleStudent
