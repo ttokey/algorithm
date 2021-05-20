@@ -16,7 +16,7 @@ public class Password {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int numberOf = scanner.nextInt();
+        int numberOf = Integer.parseInt(scanner.nextLine());
         String input = scanner.nextLine();
         System.out.println(solution(numberOf, input));
     }
