@@ -23,7 +23,6 @@ public class UniquePathsIII {
     int[][] grid;
 
     public int uniquePaths(int[][] grid) {
-        g
         return 1;
     }
 
