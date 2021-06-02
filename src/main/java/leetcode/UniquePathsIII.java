@@ -45,8 +45,7 @@ public class UniquePathsIII {
 
 
     public void dfs(int nowRow, int nowCol, int depth) {
-
-        if (grid[nowRow][nowCol] == 2 && depth == countZero) {
+        if (grid[nowRow][nowCol] == 2 && depth == countZero + 1) {
             getRuteCount++;
             return;
         }
@@ -55,8 +54,9 @@ public class UniquePathsIII {
             int toRow = nowRow + moveRow[i];
             int toCol = nowCol + moveCol[i];
             if (toRow >= 0 && toRow < row && toCol >= 0 && toCol < col) {
-                if (grid[toRow][toCol] == 0 && !visitedPath[toRow][toCol]) {
+                if (grid[toRow][toCol] != -1 && !visitedPath[toRow][toCol]) {
                     visitedPath[toRow][toCol] = true;
+
                     dfs(toRow, toCol, depth + 1);
                     visitedPath[toRow][toCol] = false;
                 }
