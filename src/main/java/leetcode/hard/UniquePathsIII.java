@@ -19,7 +19,7 @@
 //2. (0,0),(1,0),(2,0),(2,1),(1,1),(0,1),(0,2),(0,3),(1,3),(1,2),(2,2)
 
 //https://hoyoungmoon.github.io/java/find-short-cut/
-package leetcode;
+package leetcode.hard;
 
 public class UniquePathsIII {
     int[][] grid;

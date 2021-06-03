@@ -29,7 +29,7 @@
 //        subrectangleQueries.getValue(0, 2); // return 5
 
 
-package leetcode;
+package leetcode.medium;
 
 
 public class SubrectangleQueries {
