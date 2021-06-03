@@ -1,59 +1,48 @@
 package leetcode.hard;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
 public class RecoverFromPreorder {
 
 
     public TreeNode recoverFromPreorder(String traversal) {
-        List<Queue<Integer>> tree = new ArrayList<>();
-
-
-        TreeNode rootNode = new TreeNode();
-        return null;
+        TreeNode rootNode = new TreeNode(Integer.parseInt(traversal.substring(0, 1)));
+        nodeToMap(rootNode, traversal);
+        return rootNode;
     }
 
-    public List<Queue<Integer>> nodeToMap(String traversal) {
-        List<Queue<Integer>> result = new ArrayList<>();
-        int maxDepth = getMaxDepth(traversal);
-        for (int i = 0; i <= maxDepth; i++) {
-            Queue<Integer> temp = new LinkedList<>();
-            result.add(i, temp);
-        }
+    public void nodeToMap(TreeNode rootNode, String traversal) {
         int depth = 0;
-        for (int i = 0; i < traversal.length(); i++) {
+        for (int i = 1; i < traversal.length(); i++) {
             if (Character.isDigit(traversal.charAt(i))) {
-                result.get(depth).add(Integer.parseInt(traversal.substring(i, i + 1)));
+                inputNode(rootNode, Integer.parseInt(traversal.substring(i, i + 1)), 0, depth);
                 depth = 0;
             } else {
                 depth++;
             }
         }
-        return result;
     }
 
-    public TreeNode inputNode(TreeNode route, int value, int depth) {
-        
-
-    }
-
-    public int getMaxDepth(String traversal) {
-        int maxDepth = 0;
-        int depth = 0;
-        for (int i = 0; i < traversal.length(); i++) {
-            if (Character.isDigit(traversal.charAt(i))) {
-                if (depth > maxDepth) {
-                    maxDepth = depth;
-                }
-                depth = 0;
-            } else {
-                depth++;
+    public void inputNode(TreeNode nowNode, int value, int nowDepth, int targetDepth) {
+        if (nowDepth + 1 == targetDepth) {
+            TreeNode node = new TreeNode(value, null, null);
+            if (nowNode.left == null) {
+                nowNode.left = node;
+                return;
+            }
+            if (nowNode.right == null) {
+                nowNode.right = node;
+                return;
+            }
+            return;
+        }
+        if (nowDepth + 1 < targetDepth) {
+            if (nowNode.left != null) {
+                inputNode(nowNode.left, value, nowDepth + 1, targetDepth);
+            }
+            if (nowNode.right != null) {
+                inputNode(nowNode.right, value, nowDepth + 1, targetDepth);
             }
         }
-        return maxDepth;
+        return;
     }
 
 
