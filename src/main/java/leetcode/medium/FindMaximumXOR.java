@@ -124,6 +124,7 @@ public class FindMaximumXOR {
         return (num & (1 << i)) == 0 ? 0 : 1;
     }
 
+
     public int findMaximumXOR3(int[] nums) {
 
         int xorMax = 0, bitMask = 0;
@@ -146,6 +147,7 @@ public class FindMaximumXOR {
         }
         return xorMax;
     }
+
 
     public int findMaximumXOR2(int[] nums) {
         int max = 0;
