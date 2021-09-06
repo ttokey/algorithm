@@ -9,9 +9,9 @@ class FarNodeTest {
     @Test
     public void test() {
         //given
-        int n = 4;
+        int n = 6;
         int[][] vertex = {{3, 6}, {4, 3}, {3, 2}, {1, 3}, {1, 2}, {2, 4}, {5, 2}};
-        
+
         //when
         int result = farNode.solution(n, vertex);
 
