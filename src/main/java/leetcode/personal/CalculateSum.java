@@ -14,6 +14,7 @@ public class CalculateSum {
             list.add(0, sum % 10);
             sum /= 10;
         }
+        
         return list.stream().mapToInt(num -> num.intValue()).toArray();
     }
 
