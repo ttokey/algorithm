@@ -40,30 +40,63 @@ package programmers;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
 public class TrafficOfThxGivingDay {
     public int solution(String[] lines) {
-        int answer = 0;
+        LocalDateTime[] startTimes = new LocalDateTime[lines.length];
+        LocalDateTime[] endTimes = new LocalDateTime[lines.length];
+        for (int i = 0; i < lines.length; i++) {
+            String[] parseLine = parseString(lines[i]);
+            LocalDateTime endTime = toLocalDateTime(parseLine[0]);
+            LocalDateTime startTime = getStartTime(endTime, parseLine[1]);
+            startTimes[i] = startTime;
+            endTimes[i] = endTime;
+        }
+
+        int[] getCounts = new int[lines.length];
+        for (int i = 0; i < getCounts.length; i++) {
+            getCounts[i] = getCountSameTime(startTimes, endTimes, i);
+        }
+
+        int answer = Arrays.stream(getCounts).max().getAsInt();
         return answer;
     }
 
-    public String[] parseString(String input) {
-        String[] splitInput = input.split(" ");
-        for (String split : splitInput) {
-            System.out.println(split);
+    public int getCountSameTime(LocalDateTime[] startTime, LocalDateTime[] endTime, int index) {
+        int flagStartCount = 0;
+        int flagEndCount = 0;
+        LocalDateTime plusOneSecondFromStart = startTime[index].plusNanos(999999999);
+        LocalDateTime plusOneSecondFromEnd = endTime[index].plusNanos(999999999);
+
+        for (int i = 0; i < startTime.length; i++) {
+            if (startTime[index].isAfter(endTime[i]) || startTime[i].isAfter(plusOneSecondFromStart)) {
+                flagStartCount++;
+            }
+            if (endTime[index].isAfter(endTime[i]) || startTime[i].isAfter(plusOneSecondFromEnd)) {
+                flagEndCount++;
+            }
         }
-        String endDate = splitInput[0] + " " + splitInput[1];
-        String doingTimeString = splitInput[2].replace("s", "");
-        float doingTime = Float.parseFloat(doingTimeString);
+        return Math.max(startTime.length - flagStartCount, startTime.length - flagEndCount);
+    }
+
+    public LocalDateTime getStartTime(LocalDateTime endTime, String stringDoingTime) {
+        long doingTime = (long) (Double.parseDouble(stringDoingTime) * 1000000000);
+        doingTime = doingTime - 1000000;
+        return endTime.minusNanos(doingTime);
+    }
+
+    public String[] parseString(String input) {
+        String[] result = new String[2];
+        String[] splitInput = input.split(" ");
+        result[0] = splitInput[0] + " " + splitInput[1];
+        result[1] = splitInput[2].replace("s", "");
+        return result;
     }
 
     public LocalDateTime toLocalDateTime(String input) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
         LocalDateTime localDateTime = LocalDateTime.from(dateTimeFormatter.parse(input));
         return localDateTime;
-    }
-
-    public Float toFloat(String input) {
-        return Float.parseFloat(input);
     }
 }
