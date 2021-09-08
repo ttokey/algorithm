@@ -28,8 +28,10 @@ public class RenewalMenu {
     public String[] solution(String[] orders, int[] course) {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < course.length; i++) {
-            List<String> manyOrder =
-                    result.addAll(getManyOrder(getMap(orders, course[i])));
+            List<String> manyOrder = getManyOrder(getMap(orders, course[i]));
+            if (!manyOrder.isEmpty()) {
+                result.addAll(manyOrder);
+            }
         }
         result.sort(Comparator.naturalOrder());
         return result.toArray(new String[0]);
@@ -38,7 +40,7 @@ public class RenewalMenu {
     public List<String> getManyOrder(Map<String, Integer> orderMap) {
         List<String> result = new ArrayList<>();
         if (orderMap.isEmpty()) {
-            return null;
+            return result;
         }
         int maxCount = Math.max(orderMap.values().stream().max(Comparator.naturalOrder()).get(), 2);
 
@@ -63,6 +65,7 @@ public class RenewalMenu {
 
     public List<String> getString(String input, int index) {
         char[] parseInput = input.toCharArray();
+        Arrays.sort(parseInput);
         Queue<Node> q = new LinkedList<>();
         for (int i = 0; i < input.length(); i++) {
             q.add(new Node(parseInput[i], i));
