@@ -1,6 +1,6 @@
 package programmers.weeklychallenge;
 
-public class Eight {
+public class Week8 {
     class Solution {
         public int solution(int[][] sizes) {
             int firstMax = 0;
