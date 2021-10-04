@@ -42,10 +42,12 @@ public class RotatingEdge {
             for (int i = x2 - 1; i > x1 - 1; i--) {
                 numbers.add(new Node(i, y1 - 1, nodes, 3));
             }
+
             for (Node node : numbers) {
                 node.change(nodes);
             }
             return numbers.stream().mapToInt(node -> node.value).min().getAsInt();
+
         }
 
     }
