@@ -36,6 +36,7 @@ public class RotatingEdge {
             for (int i = x2 - 1; i >= x1 - 1; i--) {
 
             }
+            return 0;
 
         }
 
