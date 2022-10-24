@@ -1,4 +1,4 @@
-package programmers;
+package programmers.practice;
 //https://programmers.co.kr/learn/courses/30/lessons/72411
 
 
@@ -22,7 +22,14 @@ package programmers;
 //요리 4개 코스 B,C,F,G 1번,5번 손님으로부터 총 2번 주문됐습니다.
 //요리 4개 코스 A,C,D,E 4번,6번 손님으로부터 총 2번 주문됐습니다.
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 public class RenewalMenu {
     public String[] solution(String[] orders, int[] course) {

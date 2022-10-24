@@ -2,6 +2,7 @@ package programmers;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import programmers.practice.GetK;
 
 class GetKTest {
     GetK getK = new GetK();

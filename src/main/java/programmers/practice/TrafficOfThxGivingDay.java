@@ -1,4 +1,4 @@
-package programmers;
+package programmers.practice;
 //예제1
 //        입력: [
 //        "2016-09-15 01:00:04.001 2.0s",

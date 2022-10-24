@@ -1,6 +1,7 @@
 package programmers;
 
 import org.junit.jupiter.api.Test;
+import programmers.practice.RecommandNewId;
 
 class RecommandNewIdTest {
     RecommandNewId recommandNewId = new RecommandNewId();

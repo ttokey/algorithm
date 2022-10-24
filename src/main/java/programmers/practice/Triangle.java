@@ -1,4 +1,4 @@
-package programmers;
+package programmers.practice;
 
 //https://programmers.co.kr/learn/courses/30/lessons/43105
 

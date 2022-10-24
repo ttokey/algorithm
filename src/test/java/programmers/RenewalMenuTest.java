@@ -3,6 +3,7 @@ package programmers;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import programmers.practice.RenewalMenu;
 
 import java.util.List;
 import java.util.Map;
