@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class RollCake_132265 {
+
+
     public int solution(int[] topping) {
         int count = 0;
         int[] leftToppingSet = new int[topping.length];
@@ -23,6 +25,58 @@ public class RollCake_132265 {
         }
         return count;
     }
+
+    public int solution2(int[] topping) {
+        int answer = -1;
+
+        if (topping.length == 1) {
+            return 0;
+        }
+
+        Set<Integer> old = new HashSet<>();
+        Set<Integer> young = new HashSet<>();
+        int maxSize = 0;
+        int oldIdx = -1;
+        int youngIdx = topping.length;
+        int oldTarget = -1;
+        int youngTarget = topping.length;
+        while (oldIdx < youngIdx) {
+
+
+            if (old.size() == young.size()) {
+                old.add(topping[++oldIdx]);
+                young.add(topping[--youngIdx]);
+
+            } else if (old.size() > young.size()) {
+                young.add(topping[--youngIdx]);
+            } else {
+                old.add(topping[++oldIdx]);
+            }
+
+            if (old.size() == young.size() && maxSize < old.size()) {
+                if (oldTarget < oldIdx) {
+                    oldTarget = oldIdx;
+                }
+                if (youngTarget > youngIdx) {
+                    youngTarget = youngIdx;
+                }
+
+                maxSize = old.size();
+            }
+        }
+
+
+        if (old.size() != young.size()) {
+            return 0;
+        }
+
+        answer = Math.abs(oldTarget - youngTarget);
+
+        return answer;
+
+    }
+
+
 }
 
 //public class RollCake_132265 {

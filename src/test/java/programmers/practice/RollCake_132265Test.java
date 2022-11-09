@@ -13,6 +13,32 @@ class RollCake_132265Test {
         int expect = 2;
 
         //when
+        int result = rollCake_132265.solution2(topping);
+
+        //then
+        Assertions.assertThat(result).isEqualTo(expect);
+    }
+
+    @Test
+    public void solution2() {
+        //given
+        int[] topping = {1, 1, 1, 1, 1, 1};
+        int expect = 5;
+
+        //when
+        int result = rollCake_132265.solution2(topping);
+
+        //then
+        Assertions.assertThat(result).isEqualTo(expect);
+    }
+
+    @Test
+    public void solution3() {
+        //given
+        int[] topping = {1, 5, 5, 5, 5, 5};
+        int expect = 1;
+
+        //when
         int result = rollCake_132265.solution(topping);
 
         //then
