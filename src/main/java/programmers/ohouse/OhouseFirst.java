@@ -51,8 +51,8 @@ public class OhouseFirst {
         List<Integer> heightList = Arrays.stream(height).boxed().collect(Collectors.toList());
         List<List<Integer>> splitHeight = new ArrayList<>();
         int index = 0;
-
         while (index < heightList.size()) {
+
             int startIndex = index;
             int start = heightList.get(index);
             index++;
